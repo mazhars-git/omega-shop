@@ -9,7 +9,7 @@ const CheckOut = () => {
 
     const [item, setItem] = useState({});
     useEffect(() => {
-        fetch('http://localhost:4021/product/'+ id)
+        fetch('https://murmuring-fjord-44706.herokuapp.com/product/'+ id)
         .then(res => res.json())
         .then(data => setItem(data))
     }, [id])
@@ -18,7 +18,7 @@ const CheckOut = () => {
     const handleCheckOut = () => {
         const orderDetails = {...loggedInUser, ...item, orderTime: new Date()};
 
-        fetch('http://localhost:4021/addOrder', {
+        fetch('https://murmuring-fjord-44706.herokuapp.com/addOrder', {
 
             method: 'POST',
             headers: {

@@ -5,12 +5,7 @@ const ManageProduct = (props) => {
     const {name, price, wight, _id} = props.item;
 
     const deleteProduct = id => {
-        // axios.delete(`http://localhost:4021/products/deleteProduct/${id}`)
-        // .then(response => {
-
-        // })
-
-        // fetch('http://localhost:4021/products/deleteProduct/'+ id, {
+        // fetch('https://murmuring-fjord-44706.herokuapp.com/products/deleteProduct/'+ id, {
             
         //     method: 'DELETE',
         // })
@@ -21,7 +16,7 @@ const ManageProduct = (props) => {
 
     }
     return (
-        <div>
+        <div className="all-products-area">
             <table className="table">
                 <tbody>
                     <tr>

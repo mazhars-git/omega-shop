@@ -1,0 +1,27 @@
+.login-area{
+    text-align: center;
+    width: 280px;
+    margin: 50px auto;
+}
+.input-style, .btn-submit{
+    display: block;
+    padding: 10px 5px;
+    margin: 10px 20px;
+    font-size: 15px;
+    width: 230px;
+    border-radius: 5px;
+}
+.btn-submit{
+    width: 150px !important;
+    margin: auto !important;
+    background-color: navy;
+    color: #fff;
+}
+.btn-style{
+    padding: 10px 30px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 30px;
+    background-color: navy;
+    color: #fff;
+}

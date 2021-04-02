@@ -9,10 +9,11 @@ import {
 } from "react-router-dom";
 import Header from './component/Header/Header';
 import Home from './component/Home/Home';
-import Order from './component/Order/Order';
+import Orders from './component/Orders/Orders';
 import Admin from './component/Admin/Admin';
 import Login from './component/Login/Login';
 import CheckOut from './component/CheckOut/CheckOut';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -20,27 +21,26 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <p>Name: {loggedInUser.name} </p>
       <Router>
-        <Header></Header>
+        <Header />
         <Switch>
           <Route path='/home'>
-            <Home></Home>
+            <Home />
           </Route>
-          <Route path='/order'>
-            <Order></Order>
-          </Route>
-          <Route path='/admin'>
-            <Admin></Admin>
-          </Route>
+          <PrivateRoute path='/order'>
+            <Orders />
+          </PrivateRoute>
+          <PrivateRoute path='/admin'>
+            <Admin />
+          </PrivateRoute>
           <Route path='/login'>
-            <Login></Login>
+            <Login />
           </Route>
-          <Route path='/product/:id'>
-            <CheckOut></CheckOut>
-          </Route>
+          <PrivateRoute path='/product/:id'>
+            <CheckOut />
+          </PrivateRoute>
           <Route exact path='/'>
-            <Home></Home>
+            <Home />
           </Route>
           <Route path='*'>
             <h2 style={{color: 'red'}}>404! error! something went wrong!!</h2>

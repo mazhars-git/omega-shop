@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import './Admin.css';
 
 const UploadProduct = () => {
     const { register, handleSubmit, watch, errors} = useForm();
@@ -15,7 +16,7 @@ const UploadProduct = () => {
             imageURL: imageURL
         }
         console.log(productData)
-        const url = `http://localhost:4021/addProduct`;
+        const url = `murmuring-fjord-44706.herokuapp.com/addProduct`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -41,8 +42,7 @@ const UploadProduct = () => {
     }
     return (
         <div className="col-8">
-            <h1>Upload a product</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className="addForm" onSubmit={handleSubmit(onSubmit)}>
                 <input name="name" defaultValue="product name" ref={register} />
                 <input name="wight" defaultValue="wight" ref={register}/>
                 <br/>
@@ -50,34 +50,6 @@ const UploadProduct = () => {
                 <input name="image" type="file" onChange={handleUploadImage}/>
                 <input type="submit" />
             </form>
-
-
-            {/* <form action="">
-                <div className="row">
-                    <div className="col-6">
-                        <label for="pName">Product Name</label> 
-                        <br/>
-                        <input type="text" id="pName" name="productName" placeholder="Name"></input>
-                    </div>
-                    <div className="col-6">
-                        <label for="wight">Wight</label>
-                        <br/>
-                        <input type="text" id="wight" name="productWight" placeholder="Wight"></input>
-                    </div>
-                    <div className="col-6">
-                        <label for="price">Add Price</label>
-                        <br/>
-                        <input type="text" id="price" name="productPrice" placeholder="Price"></input>
-                    </div>
-                    <div className="col-6">
-                        <label for="image">Add Photo</label>
-                        <br/>
-                        <input type="file" id="image" name="image"></input>
-                    </div>
-                </div>
-                <br/>
-                <button>Save</button>
-            </form> */}
         </div>
     );
 };

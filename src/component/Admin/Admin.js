@@ -12,18 +12,20 @@ import AdminMenu from './AdminMenu';
 
 const Admin = () => {
     return (
-        <div className="row">
+        <div className="container admin-area">
+            <div className="row">
                 <Router>
-                    <AdminMenu></AdminMenu>
+                    <AdminMenu />
                     <Switch>
                         <Route path="/addProduct">
-                            <AddProduct></AddProduct>
+                            <AddProduct />
                         </Route>
                         <Route path="/manageProduct">
-                            <ProductsList></ProductsList>
+                            <ProductsList />
                         </Route>
                     </Switch>
                 </Router>
+            </div>
         </div>
     );
 };

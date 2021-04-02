@@ -1,26 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import ManageProduct from './ManageProduct';
+import '.././Admin/Admin.css';
 
 const ProductsList = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4021/products')
+        fetch('https://murmuring-fjord-44706.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
     return (
         <div className="col-8">
-            <h1>Delete or remove product</h1>
-            {/* <table className="table">
-                <thead>
-                    <tr>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Wight</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Action</th>
-                    </tr>
-                </thead>
-            </table> */}
+            <h3 className="text-center">All products</h3>
                 {
                     products.map(pd => <ManageProduct item={pd} key={pd._id}></ManageProduct>) 
                 }
