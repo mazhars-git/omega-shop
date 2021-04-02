@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AdminMenu = () => {
     return (
-        <div className="card col-4 admin-menu">
+        <div className="card col-md-4 admin-menu">
             <ul>
                     <li>
                         <Link to="/manageProduct">

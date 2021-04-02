@@ -10,7 +10,7 @@ const ProductsList = () => {
         .then(data => setProducts(data))
     }, [])
     return (
-        <div className="col-8">
+        <div className="col-md-8">
             <h3 className="text-center">All products</h3>
                 {
                     products.map(pd => <ManageProduct item={pd} key={pd._id}></ManageProduct>) 

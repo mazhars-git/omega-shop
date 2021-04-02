@@ -8,8 +8,8 @@ const Product = (props) => {
     return (
         <div className="card col-md-3 product-item">
             <img src={imageURL} alt=""/>
-            <h3>{name}</h3>
-            <p>Price: {price}</p>
+            <h4>{name}</h4>
+            <p>${price}</p>
             <Link to={`/product/${_id}`}>
                 <button className="btn btn-primary">Buy Now</button>
             </Link>

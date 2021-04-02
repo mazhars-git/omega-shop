@@ -14,6 +14,14 @@ const Home = () => {
         <div className="container">
             <div className="row all-product">
                 {
+                    products.length === 0 && 
+                    <div class="text-center text-success m-5">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden"></span>
+                        </div>
+                    </div>
+                }
+                {
                     products.map(pd => <Product product={pd} key={pd._id}></Product>)
                 }
             </div>
