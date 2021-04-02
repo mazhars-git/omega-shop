@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { createContext, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -12,10 +12,15 @@ import Home from './component/Home/Home';
 import Order from './component/Order/Order';
 import Admin from './component/Admin/Admin';
 import Login from './component/Login/Login';
+import CheckOut from './component/CheckOut/CheckOut';
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className="container">
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <p>Name: {loggedInUser.name} </p>
       <Router>
         <Header></Header>
         <Switch>
@@ -31,6 +36,9 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
+          <Route path='/product/:id'>
+            <CheckOut></CheckOut>
+          </Route>
           <Route exact path='/'>
             <Home></Home>
           </Route>
@@ -39,8 +47,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      
-    </div>
+    </UserContext.Provider>
   );
 }
 

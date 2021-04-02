@@ -5,14 +5,19 @@ const ManageProduct = (props) => {
     const {name, price, wight, _id} = props.item;
 
     const deleteProduct = id => {
-        fetch('http://localhost:4021/products/deleteProduct/'+ id, {
+        // axios.delete(`http://localhost:4021/products/deleteProduct/${id}`)
+        // .then(response => {
+
+        // })
+
+        // fetch('http://localhost:4021/products/deleteProduct/'+ id, {
             
-            method: 'DELETE',
-        })
-        .then(res => res.json())
-        .then(result => {
-            console.log('deleted', result)
-        })
+        //     method: 'DELETE',
+        // })
+        // .then(res => res.json())
+        // .then(result => {
+        //     console.log('deleted', result)
+        // })
 
     }
     return (
